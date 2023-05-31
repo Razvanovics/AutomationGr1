@@ -9,4 +9,7 @@ public class BasePage {
     private static final Logger LOG = LoggerFactory.getLogger(BasePage.class);
     public static WebDriver driver;
     test degeaba
+    Test in care invat si eu ceva
+
+
 }
