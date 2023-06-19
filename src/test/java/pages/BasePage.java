@@ -36,5 +36,19 @@ public class BasePage {
         }
     }
 
+    public static String returnBaseUrl(){
+        return "https://demo.automationtesting.in/Index.html";
+    }
+
+    public static String getBaseUrl(){ //Methoda in care putem adauga noi in loc de Index.html orice alt link din pagina exemplu Register.html
+
+        String baseurl = returnBaseUrl();
+        if (baseurl !=null){
+            return baseurl.replace( "Index.html","");
+
+        }
+        return baseurl;
+    }
+
 
 }
