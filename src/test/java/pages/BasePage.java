@@ -20,6 +20,8 @@ public class BasePage {
         LOG.info("Open Browser Maximized");
         driver.manage().window().maximize();//Methoda care Porneste Chrome in Maximized Window
 
+
+
     }
 
     public static void tearDown() { //Methoda care inchide browser-ul.
