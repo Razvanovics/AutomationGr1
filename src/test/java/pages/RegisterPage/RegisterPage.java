@@ -2,6 +2,7 @@ package pages.RegisterPage;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -45,6 +46,9 @@ public class RegisterPage extends BasePage {
     private By birthDay = By.id("daybox");
     private By firstPassword = By.id("firstpassword");
     private By secondPassword = By.id("secondpassword");
+    private By chooseFileButton = By.id("imagesrc");
+    private By confirmLogoImage = By.id("imagetrgt");
+    private By submitButton = By.id("submitbtn");
 
 
     public void typeFirstName(String fName) { //Methoda ce introduce o valoare in fieldul First Name
@@ -100,7 +104,7 @@ public class RegisterPage extends BasePage {
     public void selectLanguage(String language) { //Methoda ce selecteaza Language
         LOG.info("Select Language ");
         driver.findElement(chooseFieldLanguage).click();
-        driver.findElement(By.xpath(String.format(selectLanguage,language))).click(); //Methoda ce inseareaza specific language cu o valoare din lista afisata pe site ca limbi
+        driver.findElement(By.xpath(String.format(selectLanguage, language))).click(); //Methoda ce inseareaza specific language cu o valoare din lista afisata pe site ca limbi
     }
 
     public void selectSkill(String skill) { //Methoda ce selecteaza o valoare din cadrul unui drop down pentru Skils
@@ -126,7 +130,7 @@ public class RegisterPage extends BasePage {
         birthDayDate.selectByValue(day);
     }
 
-    public void confirmPasswordFields (String password,String confirmPassword) {
+    public void confirmPasswordFields(String password, String confirmPassword) {
 
         LOG.info("Enter First password");
         driver.findElement(firstPassword).sendKeys(password);
@@ -134,6 +138,16 @@ public class RegisterPage extends BasePage {
 
     }
 
+    public void chooseFileButtonUpload() {
+        LOG.info("Click Choose File Button to open Windows Explorer");
+        WebElement chooseFile=driver.findElement(chooseFileButton);
+        chooseFile.sendKeys("C:\\Users\\Razvanovics\\Downloads\\Azimut File Upload\\Mreana.jpg"); //Exemplu de la curs este mai ok pentru Scalabilitate
+//        driver.findElement(chooseFileButton).sendKeys("C:\\Users\\Razvanovics\\Downloads\\Azimut File Upload\\Mreana.jpg"); //Asta e ce am scris eu ca optiune
+    }
 
+    public void clickSubmitButton() {
+        LOG.info("Click Submit Button");
+        driver.findElement(submitButton).click();
+    }
 
 }

@@ -74,6 +74,11 @@ public class RegisterTest extends BaseTest {
         LOG.info("Confirm Password Fields");
         registerPage.confirmPasswordFields(firstPassword,secondPassword);
 
+        LOG.info("Upload Image");
+        registerPage.chooseFileButtonUpload();
+
+        LOG.info("Click Submit Button");
+        registerPage.clickSubmitButton();
 
         sleep(7000);
     }
